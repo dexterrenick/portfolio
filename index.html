@@ -61,6 +61,7 @@
 <header class="header" id="navbar-collapse-toggle">
     <!-- Fixed Navigation Starts -->
     <ul class="icon-menu d-none d-lg-block revealator-slideup revealator-once revealator-delay1">
+        <div id="nav-indicator"></div>
         <li class="icon-box active">
             <i class="fa fa-home"></i>
             <a href="#home">
@@ -1011,6 +1012,65 @@
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/custom.js"></script>
+<script>
+  (function(){
+    var sections = [
+      { id: 'home', el: null },
+      { id: 'about', el: null },
+      { id: 'projects', el: null },
+      { id: 'contact', el: null }
+    ];
+    function updateSections() {
+      sections.forEach(function(s){ s.el = document.getElementById(s.id); });
+    }
+    function lerp(a,b,t){ return a + (b-a)*t; }
+    function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
+    function onScroll(){
+      var menu = document.querySelector('.icon-menu');
+      var dots = Array.prototype.slice.call(menu.querySelectorAll('li.icon-box'));
+      var indicator = document.getElementById('nav-indicator');
+      if (!indicator || !dots.length) return;
+      var rects = sections.map(function(s, idx){
+        if (!s.el) return null;
+        var r = s.el.getBoundingClientRect();
+        return { idx: idx, top: r.top, height: r.height };
+      }).filter(Boolean);
+      // Find nearest two sections around viewport center
+      var center = window.innerHeight/2;
+      rects.sort(function(a,b){ return Math.abs(a.top+ a.height/2 - center) - Math.abs(b.top + b.height/2 - center); });
+      var primary = rects[0];
+      var secondary = rects[1] || primary;
+      // Compute blend between primary and secondary based on center distance
+      var pCenter = primary.top + primary.height/2;
+      var sCenter = secondary.top + secondary.height/2;
+      var total = Math.abs(sCenter - pCenter) || 1;
+      var t = clamp((center - pCenter) / total, -1, 1);
+      var aIdx = primary.idx;
+      var bIdx = secondary.idx;
+      // Map to menu dot centers
+      function centerOfDot(idx){
+        var box = dots[idx];
+        var br = box.getBoundingClientRect();
+        return br.top + br.height/2;
+      }
+      var ay = centerOfDot(aIdx);
+      var by = centerOfDot(bIdx);
+      var y = lerp(ay, by, (t+1)/2);
+      // Position indicator
+      var menuRect = menu.getBoundingClientRect();
+      indicator.style.transform = 'translateY(' + (y - menuRect.top - 12) + 'px)';
+      // Active state
+      dots.forEach(function(li){ li.classList.remove('active'); });
+      dots[aIdx].classList.add('active');
+    }
+    document.addEventListener('DOMContentLoaded', function(){
+      updateSections();
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', function(){ updateSections(); onScroll(); });
+    });
+  })();
+</script>
 <script src="js/sections.js"></script>
 <script>
   (function(){
