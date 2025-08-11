@@ -23,6 +23,39 @@
 
     <!-- Modernizr JS File -->
     <script src="js/modernizr.custom.js"></script>
+
+    <style>
+        /* --------- Spacing & bullets fix ---------- */
+        .resume-box > ul { margin: 0; padding: 0; list-style: none; }
+        .resume-box > ul > li {
+            margin: 0 0 1.25rem 0;      /* clear space between positions */
+            padding: 0 0 .75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,.06);
+        }
+        .resume-box > ul > li:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+
+        /* paragraph spacing inside an item */
+        .resume-box p { margin: .35rem 0 .5rem; }
+
+        /* nested bullet list spacing (tighter, consistent) */
+        .resume-box ul ul {
+            margin: .5rem 0 .25rem;     /* space above bullets so they don't touch next item */
+            padding-left: 1.1rem;
+        }
+        .resume-box ul ul li {
+            margin: .1rem 0;            /* reduce space between bullets */
+            line-height: 1.35;
+        }
+
+        /* Optional: ensure small headings don't push spacing oddly */
+        .resume-box h5 { margin: .15rem 0 .25rem; line-height: 1.25; }
+
+        /* Coursework items */
+        .course-item h6 { margin: 0; }
+
+        /* Utility for invisible grid fillers */
+        .invisible-text { visibility: hidden; }
+    </style>
 </head>
 
 <body class="about">
@@ -32,27 +65,19 @@
     <ul class="icon-menu d-none d-lg-block revealator-slideup revealator-once revealator-delay1">
         <li class="icon-box">
             <i class="fa fa-home"></i>
-            <a href="index.html">
-                <h2>Home</h2>
-            </a>
+            <a href="index.html"><h2>Home</h2></a>
         </li>
         <li class="icon-box active">
             <i class="fa fa-user"></i>
-            <a href="about.html">
-                <h2>About</h2>
-            </a>
+            <a href="about.html"><h2>About</h2></a>
         </li>
         <li class="icon-box">
             <i class="fa fa-briefcase"></i>
-            <a href="portfolio.html">
-                <h2>Projects</h2>
-            </a>
+            <a href="portfolio.html"><h2>Projects</h2></a>
         </li>
         <li class="icon-box">
             <i class="fa fa-envelope-open"></i>
-            <a href="contact.html">
-                <h2>Contact</h2>
-            </a>
+            <a href="contact.html"><h2>Contact</h2></a>
         </li>
     </ul>
     <!-- Fixed Navigation Ends -->
@@ -60,9 +85,7 @@
     <nav role="navigation" class="d-block d-lg-none">
         <div id="menuToggle">
             <input type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
             <ul class="list-unstyled" id="menu">
                 <li><a href="index.html"><i class="fa fa-home"></i><span>Home</span></a></li>
                 <li class="active"><a href="about.html"><i class="fa fa-user"></i><span>About</span></a></li>
@@ -74,168 +97,158 @@
     <!-- Mobile Menu Ends -->
 </header>
 <!-- Header Ends -->
+
 <!-- Page Title Starts -->
 <section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
     <h1>ABOUT <span>ME</span></h1>
     <span class="title-bg">Resume</span>
 </section>
 <!-- Page Title Ends -->
+
 <!-- Main Content Starts -->
 <section class="main-content revealator-slideup revealator-once revealator-delay1">
     <div class="container">
-        <!-- Skills Starts -->
-        <div class="row">
-            <div class="col-12">
-                <h3 class="text-uppercase pb-4 pb-sm-5 mb-3 mb-sm-0 text-left text-sm-center custom-title ft-wt-600">My Skills</h3>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">java</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">swift</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">python</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">javascript</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">react.js</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">html</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">css</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">less</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">git</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">Freemarker</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">jest</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">selenium</h6>
-            </div>
-        </div>
-        <!-- Skills Ends -->
-        <hr class="separator mt-1">
+
         <!-- Experience & Education Starts -->
-        <div class="row">
+        <div class="row resume-columns">
             <div class="col-12">
-                <h3 class="text-uppercase pb-5 mb-0 text-left text-sm-center custom-title ft-wt-600">Experience <span>&</span> Education</h3>
+                <h3 class="text-uppercase pb-5 mb-0 text-left text-sm-center custom-title ft-wt-600">
+                    Experience <span>&</span> Education
+                </h3>
             </div>
+
+            <!-- Column A -->
             <div class="col-lg-6 m-15px-tb">
                 <div class="resume-box">
-                    <ul>
-                      <li>
-                          <div class="icon">
-                              <i class="fa fa-briefcase"></i>
-                          </div>
-                          <span class="time open-sans-font text-uppercase">July-December 2022</span>
-                          <h5 class="poppins-font text-uppercase">iOS Development Intern<span class="place open-sans-font">Boston, MA</span></h5>
-                          <p class="open-sans-font">Improve performance by cutting app startup time in half and engineer custom UI components in Swift.</p>
-                          </br>
-                          <p class="open-sans-font">Communicate with product, design, and executive teams to support quality assurance on 14 project releases.</p>
-                      </li>
-                      <li>
-                          <div class="icon">
-                              <i class="fa fa-briefcase"></i>
-                          </div>
-                          <span class="time open-sans-font text-uppercase">January-August 2021</span>
-                          <h5 class="poppins-font text-uppercase">Cargurus Front End Web Development Intern<span class="place open-sans-font">Los Angeles, CA</span></h5>
-                          <p class="open-sans-font">Collaborated with web designers and back end developers to build, A/B test, and improve web products.</p>
-                          </br>
-                          <p class="open-sans-font">Implemented the redesign of the homepage for returning users using React JS, LESS, and Freemarker.</p>
-                      </li>
-                      <li>
-                          <div class="icon">
-                              <i class="fa fa-briefcase"></i>
-                          </div>
-                          <span class="time open-sans-font text-uppercase">October-November 2019</span>
-                          <h5 class="poppins-font text-uppercase">Pixellab - Frontend web development intern<span class="place open-sans-font">Remote</span></h5>
-                          <p class="open-sans-font">Created CSS Modal Animations to open text articles on web development project for Interactivism.</p>
-                          </br>
-                          <p class="open-sans-font">Created custom taxonomy  lter by article category in PHP for UCLA web development project.</p>
-                      </li>
+                    <ul id="list-left">
+                        <li>
+                            <div class="icon"><i class="fa fa-briefcase"></i></div>
+                            <span class="time open-sans-font text-uppercase">Jun 2024 – Present</span>
+                            <h5 class="poppins-font text-uppercase">Director of Technology — Four Hundred <span class="place open-sans-font">New York, NY</span></h5>
+                            <p class="open-sans-font">Lead technology strategy and delivery across a 30+ person luxury concierge—spanning infra, product, and internal platforms.</p>
+                            <ul class="open-sans-font">
+                                <li>+30% membership inquiries via SEO, performance, and Google Ads work.</li>
+                                <li>Salesforce member portal & design system; 2× member engagement.</li>
+                                <li>LWC, dynamic pages, Flows, Apex → ~70% efficiency gains on ops.</li>
+                                <li>Incubated Kai Concierge from concept to App Store in ~2 months.</li>
+                                <li><em>Stack:</em> AWS (ECS/ALB/S3), Docker, Django/Node, React/React Native, Salesforce.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <div class="icon"><i class="fa fa-briefcase"></i></div>
+                            <span class="time open-sans-font text-uppercase">Jun 2024 – Present</span>
+                            <h5 class="poppins-font text-uppercase">Director of Technology — Stellar Pro <span class="place open-sans-font">New York, NY</span></h5>
+                            <p class="open-sans-font">B2B hotel-booking marketplace used by 3,000+ agents; led a team of five.</p>
+                            <ul class="open-sans-font">
+                                <li>Realtime messaging (Socket.io) and automated payouts (QuickBooks/Brex).</li>
+                                <li>Django + React on AWS ECS with CI/CD for reliability and scale.</li>
+                                <li><em>Stack:</em> Django, React, AWS, CI/CD, marketplace architecture.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <div class="icon"><i class="fa fa-briefcase"></i></div>
+                            <span class="time open-sans-font text-uppercase">Mar 2025 – Present</span>
+                            <h5 class="poppins-font text-uppercase">Founder — Kai Concierge <span class="place open-sans-font">New York, NY</span></h5>
+                            <p class="open-sans-font">Hybrid AI + human lifestyle assistant for dining, travel, events, and errands.</p>
+                            <ul class="open-sans-font">
+                                <li>24/7 conversational AI with pro hospitality routing.</li>
+                                <li>From Michelin tables to sold-out hotels; bespoke experiences.</li>
+                                <li><em>Stack:</em> React Native, Node.js/Socket.io, AWS; agentic preference profiles.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <div class="icon"><i class="fa fa-briefcase"></i></div>
+                            <span class="time open-sans-font text-uppercase">May 2023 – Apr 2024</span>
+                            <h5 class="poppins-font text-uppercase">Founder — TableTurn.nyc (formerly Resy Sniper) <span class="place open-sans-font">Remote</span></h5>
+                            <p class="open-sans-font">Automated reservation platform scaled to 6-figure ARR in 12 months; acquired in 2024.</p>
+                            <ul class="open-sans-font">
+                                <li>MVP end-to-end (Django + Next.js) with Resy & OpenTable integrations.</li>
+                                <li>Booking automation, token refresh, and 24/7 monitoring.</li>
+                                <li>Migrated Flask→Django; CI/CD with Docker; AWS ECS Fargate.</li>
+                                <li>Led 4 contractors on a performance & UX redesign.</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Column B -->
             <div class="col-lg-6 m-15px-tb">
                 <div class="resume-box">
-                    <ul>
-                      <li>
-                          <div class="icon">
-                              <i class="fa fa-graduation-cap"></i>
-                          </div>
-                          <span class="time open-sans-font text-uppercase">August 2019-Current</span>
-                          <h5 class="poppins-font text-uppercase">Northeastern University - Khoury College of Computer Science<span class="place open-sans-font">Boston, MA</span></h5>
-                          <p class="open-sans-font">Studying computer science and design.</p>
-                      </li>
+                    <ul id="list-right">
                         <li>
-                            <div class="icon">
-                                <i class="fa fa-briefcase"></i>
-                            </div>
-                            <span class="time open-sans-font text-uppercase">June-August 2018</span>
-                            <h5 class="poppins-font text-uppercase">LA Men's Market - Marketing Intern<span class="place open-sans-font">Los Angeles, CA</span></h5>
-                            <p class="open-sans-font">Marketed the men's fashion show over the telephone to over 300 retailers.</p>
-                            </br>
-                            <p class="open-sans-font">Developed website using HTML and CSS to include pricing form, testimonials, photos, and more.</p>
+                            <div class="icon"><i class="fa fa-briefcase"></i></div>
+                            <span class="time open-sans-font text-uppercase">Jul 2023 – Dec 2023</span>
+                            <h5 class="poppins-font text-uppercase">iOS Developer — Ginger Labs (Notability) <span class="place open-sans-font">San Francisco, CA</span></h5>
+                            <p class="open-sans-font">Shipped at scale; improved core performance for a top productivity app.</p>
+                            <ul class="open-sans-font">
+                                <li>Audio transcription used for 10M+ hours.</li>
+                                <li>Introduced 4 widgets; enhanced Universal Clipboard flows.</li>
+                                <li>Targeted startup-time and stability improvements.</li>
+                                <li><em>Stack:</em> iOS, Objective-C/Swift, UIKit, MVVM/MVC, Xcode.</li>
+                            </ul>
                         </li>
+
                         <li>
-                            <div class="icon">
-                                <i class="fa fa-briefcase"></i>
-                            </div>
-                            <span class="time open-sans-font text-uppercase">2016-Current</span>
-                            <h5 class="poppins-font text-uppercase">DJ<span class="place open-sans-font">Los Angeles, CA & Boston, MA</span></h5>
-                            <p class="open-sans-font">DJ'd over 30 parties and events in the greater Los Angeles Area.</p>
-                            </br>
-                            <p class="open-sans-font">Developed website using HTML and CSS to include pricing form, testimonials, photos, and more.</p>
+                            <div class="icon"><i class="fa fa-briefcase"></i></div>
+                            <span class="time open-sans-font text-uppercase">Jul 2022 – Dec 2022</span>
+                            <h5 class="poppins-font text-uppercase">Software Engineer — Ten Percent Happier <span class="place open-sans-font">Boston, MA</span></h5>
+                            <p class="open-sans-font">Performance, reusable UI systems, and release quality.</p>
+                            <ul class="open-sans-font">
+                                <li>~50% faster app startup; reusable Swift UI components/frameworks.</li>
+                                <li>QA support across 14 releases; personalized homepage.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <div class="icon"><i class="fa fa-briefcase"></i></div>
+                            <span class="time open-sans-font text-uppercase">Jan 2021 – Aug 2021</span>
+                            <h5 class="poppins-font text-uppercase">Software Engineer — CarGurus <span class="place open-sans-font">Boston, MA</span></h5>
+                            <p class="open-sans-font">Built & A/B-tested consumer experiences across web.</p>
+                            <ul class="open-sans-font">
+                                <li>Redesigned returning-user homepage (React, CSS, FTL).</li>
+                                <li><em>Stack:</em> React, experimentation, cross-functional delivery.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <div class="icon"><i class="fa fa-graduation-cap"></i></div>
+                            <span class="time open-sans-font text-uppercase">Aug 2019 – May 2024</span>
+                            <h5 class="poppins-font text-uppercase">Northeastern University — Khoury College of Computer Sciences <span class="place open-sans-font">Boston, MA</span></h5>
+                            <p class="open-sans-font">B.S. Computer Science & Design (GPA 3.70/4.00). Focus: human-centered product, algorithms, systems.</p>
+                        </li>
+
+                        <li>
+                            <div class="icon"><i class="fa fa-briefcase"></i></div>
+                            <span class="time open-sans-font text-uppercase">Aug 2016 – Jan 2021</span>
+                            <h5 class="poppins-font text-uppercase">Co-Founder — DJ Dexter & MC Cole Entertainment <span class="place open-sans-font">Los Angeles, CA</span></h5>
+                            <p class="open-sans-font">DJ’d 30+ events; built marketing site with pricing, testimonials, photos, and booking.</p>
+                            <ul class="open-sans-font">
+                                <li>End-to-end brand, web, and client experience ownership.</li>
+                                <li><em>Stack:</em> HTML/CSS, small-biz ops, client service.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <div class="icon"><i class="fa fa-briefcase"></i></div>
+                            <span class="time open-sans-font text-uppercase">Oct 2019 – Nov 2019</span>
+                            <h5 class="poppins-font text-uppercase">Front End Web Development Intern — Pixellab <span class="place open-sans-font">Remote</span></h5>
+                            <p class="open-sans-font">UI and PHP features for media & university projects.</p>
+                            <ul class="open-sans-font">
+                                <li>CSS modal animations; custom taxonomy filter by article category (PHP) for a UCLA site.</li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- Experience & Education Ends -->
+
         <hr class="separator mt-1">
-        <!-- Skills Starts -->
-        <div class="row">
-            <div class="col-12">
-                <h3 class="text-uppercase pb-4 pb-sm-5 mb-3 mb-sm-0 text-left text-sm-center custom-title ft-wt-600">Relevant Coursework</h3>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">Algorithms and Data</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">Algorithms and Data</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">Object Oriented Design</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">Discrete Mathematics</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">Introduction to Marketing</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">Interaction Design</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">Color and Composition</h6>
-            </div>
-            <div class="col-6 col-md-3 mb-3 mb-sm-5">
-                <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">Experience and Interaction design</h6>
-            </div>
-        </div>
-        <!-- Skills Ends -->
+
     </div>
 </section>
 <!-- Main Content Ends -->
@@ -253,6 +266,92 @@
 <script src="js/bootstrap.js"></script>
 <script src="js/custom.js"></script>
 
-</body>
+<!-- Dynamic helpers -->
+<script>
+(function () {
+    /**
+     * Pads a grid so each row is complete for xs (2 cols) and md+ (4 cols).
+     */
+    function padGrid(containerSelector, colsXs, colsMd) {
+        var grid = document.querySelector(containerSelector);
+        if (!grid) return;
 
+        // remove existing fillers first (if any)
+        grid.querySelectorAll('.grid-filler').forEach(function(n){ n.remove(); });
+
+        var items = grid.querySelectorAll('.course-item');
+        var count = items.length;
+
+        // MD+
+        var remMd = count % colsMd;
+        if (remMd !== 0) {
+            var toAddMd = colsMd - remMd;
+            for (var i = 0; i < toAddMd; i++) {
+                var fillerMd = document.createElement('div');
+                fillerMd.className = 'grid-filler col-6 col-md-3 mb-3 mb-sm-5 d-none d-md-block';
+                fillerMd.innerHTML = '<h6 class="open-sans-font text-center mt-2 mt-sm-4 invisible-text">&nbsp;</h6>';
+                grid.appendChild(fillerMd);
+            }
+            count += toAddMd;
+        }
+
+        // XS
+        var remXs = count % colsXs;
+        if (remXs !== 0) {
+            var toAddXs = colsXs - remXs;
+            for (var j = 0; j < toAddXs; j++) {
+                var fillerXs = document.createElement('div');
+                fillerXs.className = 'grid-filler col-6 mb-3 mb-sm-5 d-block d-md-none';
+                fillerXs.innerHTML = '<h6 class="open-sans-font text-center mt-2 mt-sm-4 invisible-text">&nbsp;</h6>';
+                grid.appendChild(fillerXs);
+            }
+        }
+    }
+
+    /**
+     * Balances the two resume lists so column counts differ by at most 1.
+     * This keeps the visual columns even without changing content text.
+     */
+    function balanceColumns(leftSel, rightSel) {
+        var left = document.querySelector(leftSel);
+        var right = document.querySelector(rightSel);
+        if (!left || !right) return;
+
+        // Move items only between these two lists
+        function count(liParent){ return liParent.querySelectorAll(':scope > li').length; }
+
+        // Prevent infinite loops by capping moves
+        var safety = 20;
+        while (Math.abs(count(left) - count(right)) > 1 && safety-- > 0) {
+            if (count(left) > count(right)) {
+                var node = left.querySelector(':scope > li:last-child');
+                if (!node) break;
+                right.appendChild(node);
+            } else {
+                var nodeB = right.querySelector(':scope > li:last-child');
+                if (!nodeB) break;
+                left.appendChild(nodeB);
+            }
+        }
+    }
+
+    function init() {
+        padGrid('#coursework-grid', 2, 4);
+        balanceColumns('#list-left', '#list-right');
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+    // If fonts/layout shift elements later, rebalance once more
+    window.addEventListener('load', function () {
+        balanceColumns('#list-left', '#list-right');
+    });
+})();
+</script>
+
+</body>
 </html>
