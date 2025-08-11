@@ -960,12 +960,14 @@ body.light hr.separator {
 
 .portfolio .slideshow figure {
   width: 100%;
-  height: auto;
-  max-height: 80vh;
+  height: calc(100vh - 160px);
+  max-height: calc(100vh - 160px);
   background: #252525;
   padding: 30px;
   overflow: auto;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .portfolio .slideshow a {
@@ -974,6 +976,7 @@ body.light hr.separator {
 
 .portfolio .slideshow figcaption {
   margin-bottom: 15px;
+  flex-shrink: 0;
 }
 
 .portfolio .slideshow figcaption h3 {
@@ -1020,11 +1023,40 @@ body.light hr.separator {
 
 /* Carousel */
 
+.portfolio .slideshow .portfolio-slider {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  position: relative;
+}
+
+.portfolio .slideshow .carousel-inner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.portfolio .slideshow .carousel-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio .slideshow .carousel-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
 .portfolio .slideshow .carousel-indicators {
   bottom: 0;
   background: rgba(0,0,0,.4);
   padding: 10px 0;
   margin: 0;
+  flex-shrink: 0;
 }
 
 .portfolio .slideshow .carousel-indicators li {
@@ -1034,6 +1066,58 @@ body.light hr.separator {
   margin: 0 7px;
   background-color: #fff;
   opacity: 1;
+}
+
+/* Carousel Controls */
+.portfolio .slideshow .carousel-control-prev,
+.portfolio .slideshow .carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.portfolio .slideshow .carousel-control-prev:hover,
+.portfolio .slideshow .carousel-control-next:hover {
+  background: rgba(0,0,0,0.8);
+  color: #ffc107;
+}
+
+.portfolio .slideshow .carousel-control-prev {
+  left: 15px;
+}
+
+.portfolio .slideshow .carousel-control-next {
+  right: 15px;
+}
+
+.portfolio .slideshow .carousel-control-prev-icon,
+.portfolio .slideshow .carousel-control-next-icon {
+  background-image: none;
+}
+
+.portfolio .slideshow .carousel-control-prev-icon:before {
+  content: '‹';
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.portfolio .slideshow .carousel-control-next-icon:before {
+  content: '›';
+  font-size: 24px;
+  font-weight: bold;
 }
 
 /* Navigation */
