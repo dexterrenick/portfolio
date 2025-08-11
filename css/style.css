@@ -1,4 +1,3 @@
-html { scroll-behavior: smooth; }
 /*
 Template Name: Tunis - Personal Portfolio
 Author: celtano
@@ -520,19 +519,6 @@ body.light hr.separator {
     text-align: center;
     border-radius: 30px 0 0 30px;
   }
-  /* Smooth position indicator */
-  .header ul.icon-menu { position: relative; }
-  #nav-indicator {
-    position: absolute;
-    left: 8px;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    opacity: 0.5;
-    pointer-events: none;
-    transition: transform 200ms ease-out;
-  }
 }
 
 /* [ Pages ] */
@@ -685,7 +671,8 @@ body.light hr.separator {
 .about .resume-box li {
   position: relative;
   padding: 0 20px 0 60px;
-  margin: 0 0 50px;
+  /* tighten space between positions */
+  margin: 0 0 24px;
 }
 
 .about .resume-box li:after {
@@ -729,9 +716,30 @@ body.light hr.separator {
 }
 
 .about .resume-box p {
-  margin: 0;
+  /* add small gap so text doesn't touch nested bullets */
+  margin: .35rem 0 .5rem;
   color: #eee;
   font-size: 14px;
+}
+
+/* Nested bullets inside resume items */
+.about .resume-box li > ul {
+  /* no markers, just a subtle indent */
+  list-style: none;
+  margin: .5rem 0 .25rem;
+  padding-left: .8rem;
+}
+
+.about .resume-box li > ul > li {
+  /* tighten spacing between items */
+  margin: .1rem 0;
+  line-height: 1.35;
+  position: relative;
+}
+
+.about .resume-box li > ul > li::before {
+  /* remove marker entirely */
+  content: none;
 }
 
 .about .resume-box .place {
@@ -900,14 +908,29 @@ body.light hr.separator {
 }
 
 .portfolio .slideshow ul > li {
-  width: min(880px, calc(100% - 40px));
-  max-height: calc(100vh - 120px);
+  width: 660px;
   position: absolute;
-  top: 48%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
   visibility: hidden;
+}
+
+/* Ensure slideshow items/images never overflow viewport */
+.portfolio .slideshow ul > li {
+  /* keep original fixed width so negative margins center correctly */
+  width: 660px;
+}
+.portfolio .slideshow figure {
+  overflow: hidden;
+}
+.portfolio .slideshow .carousel-item img,
+.portfolio .slideshow ul > li img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .portfolio .slideshow ul > li.show {
@@ -937,7 +960,8 @@ body.light hr.separator {
 
 .portfolio .slideshow figure {
   width: 100%;
-  max-height: calc(100vh - 160px);
+  height: auto;
+  max-height: 80vh;
   background: #252525;
   padding: 30px;
   overflow: auto;
@@ -1524,9 +1548,9 @@ body.light hr.separator {
   }
 
   .portfolio .slideshow figure {
-    padding: 125px 30px 30px;
+    padding: 90px 30px 30px;
     border-radius: 0;
-    max-width: 720px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
@@ -1728,7 +1752,7 @@ body.light hr.separator {
   }
 
   .portfolio .slideshow figure {
-    padding: 85px 25px 25px;
+    padding: 70px 20px 20px;
   }
 
   .portfolio .slideshow figcaption h3 {
