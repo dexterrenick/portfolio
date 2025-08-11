@@ -1033,12 +1033,20 @@ body.light hr.separator {
 
 .portfolio .slideshow .carousel-inner {
   flex: 1;
-  display: flex;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .portfolio .slideshow .carousel-item {
+  position: relative;
+  display: none;
+  width: 100%;
   height: 100%;
+  text-align: center;
+}
+
+.portfolio .slideshow .carousel-item.active {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1072,52 +1080,57 @@ body.light hr.separator {
 .portfolio .slideshow .carousel-control-prev,
 .portfolio .slideshow .carousel-control-next {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background: rgba(0,0,0,0.5);
-  border: none;
-  border-radius: 50%;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 1000;
+  width: 15%;
+  color: #fff;
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+  text-decoration: none;
 }
 
 .portfolio .slideshow .carousel-control-prev:hover,
-.portfolio .slideshow .carousel-control-next:hover {
-  background: rgba(0,0,0,0.8);
-  color: #ffc107;
+.portfolio .slideshow .carousel-control-next:hover,
+.portfolio .slideshow .carousel-control-prev:focus,
+.portfolio .slideshow .carousel-control-next:focus {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
 }
 
 .portfolio .slideshow .carousel-control-prev {
-  left: 15px;
+  left: 0;
 }
 
 .portfolio .slideshow .carousel-control-next {
-  right: 15px;
+  right: 0;
 }
 
 .portfolio .slideshow .carousel-control-prev-icon,
 .portfolio .slideshow .carousel-control-next-icon {
-  background-image: none;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .portfolio .slideshow .carousel-control-prev-icon:before {
   content: '‹';
-  font-size: 24px;
-  font-weight: bold;
 }
 
 .portfolio .slideshow .carousel-control-next-icon:before {
   content: '›';
-  font-size: 24px;
-  font-weight: bold;
 }
 
 /* Navigation */
